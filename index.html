@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Our Love Story</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            font-family: 'Georgia', serif;
+            text-align: center;
+            margin: 0;
+            overflow: hidden;
+            color: white;
+        }
+        #mainDiv {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+        #loveHeart {
+            position: relative;
+            width: 500px;
+            height: 500px;
+        }
+        #letter {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 182, 193, 0.95); /* Soft pink background */
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+            width: 70%;
+            max-width: 550px;
+            font-size: 20px;
+            font-family: 'Georgia', serif;
+            color: #333;
+            text-align: justify;
+            display: none;
+            max-height: 80vh; /* Prevents it from being too big */
+            overflow-y: auto; /* Scrollable if too long */
+            transition: opacity 2s ease-in-out; /* Smooth fade-in */
+        }
+        
+        .fade-in {
+            display: block !important;
+            opacity: 1 !important;
+        }
+        
+        canvas {
+            position: absolute;
+        }
+        #messages {
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            animation: glow 2s infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 5px white; }
+            to { text-shadow: 0 0 20px #ffcccb; }
+        }
+        #letter {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 182, 193, 0.95); /* Soft pink background */
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+            width: 70%;
+            max-width: 550px;
+            font-size: 20px;
+            font-family: 'Georgia', serif;
+            color: #333;
+            text-align: justify;
+            display: none;
+            max-height: 80vh; /* Prevents it from being too big */
+            overflow-y: auto; /* Enable scrolling but hide scrollbar */
+            transition: opacity 2s ease-in-out; /* Smooth fade-in */
+        }
+        
+        /* Hide scrollbar but allow scrolling */
+        #letter::-webkit-scrollbar {
+            width: 0; /* Hides scrollbar for Chrome, Safari */
+            display: none;
+        }
+        #letter {
+            -ms-overflow-style: none; /* Hides scrollbar for Internet Explorer, Edge */
+            scrollbar-width: none; /* Hides scrollbar for Firefox */
+        }
+        
+        .fade-in {
+            animation: fadeIn 2s ease-in-out;
+            display: block !important;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: red;
+            transform: rotate(-45deg);
+            animation: floatUp 3s infinite;
+        }
+        .heart:before, .heart:after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: red;
+            border-radius: 50%;
+        }
+        .heart:before { top: -10px; left: 0; }
+        .heart:after { left: 10px; top: 0; }
+        @keyframes floatUp {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            100% { transform: translateY(-100px) scale(1.5); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div id="mainDiv">
+        <div id="loveHeart">
+            <canvas id="garden"></canvas>
+            <div id="words">
+                <div id="messages">
+                    <span class="heart-icon">❤️ <br></span>  
+                    <span class="romantic-text">Every beat of my heart, <br></span>  
+                    <span class="highlight-name">whispers your name, Payal</span>.  
+                    <br/>
+                    <span class="love-quote">Loving you is the most beautiful <br> journey of my life.</span>  
+                    <br/>
+                    <div id="elapseClock"></div>
+                </div>
+                <div id="loveu">
+                    <span class="infinity-symbol">∞</span>  
+                    Love you forever and ever.  
+                    <br/>
+                    <div class="signature">- Hariom</div>
+                </div>
+                
+            </div>
+        </div>
+        <div id="letter">
+            <h3 style="display: flex; justify-content: center; align-items: center; height: 25vh; text-align: center; font-size: 28px; font-weight: bold; color: red;">
+                I LOVE YOU ❤️
+            </h3>
+            
+            <p>Payal do you remember those shy glances in school, the feelings I never dared to voice? Even then, you held a special place in my heart. When we reconnected, those feelings blossomed into something so much deeper, so much more real.</p>
+            <p>Those first few months, when you asked for time to know me, were some of the most precious of my life. Every day, every conversation, every shared photo strengthened the bond between us. We built a connection that felt like coming home. You became a constant source of joy, comfort, and unwavering support.</p>
+            <p>And now, Payal, here we are. We've grown together, laughed together, and shared a love that feels like it was always meant to be. My love for you has only deepened, and I can't imagine my life without you by my side.</p>
+            <p>Payal, you are my best friend, my confidante, the love of my life. You bring a light into my world that I never knew existed. You make me a better person every day.</p>
+            <p>So, Payal, with all my heart, I ask you: Will you do me the incredible honor of becoming my life partner? Will you walk beside me, hand in hand, through all the adventures and challenges life brings? Will you let me love you, cherish you, and build a lifetime of memories with you?.</p>
+            <p> Payal I will always love you ❤️ <br/>  Will you say 'yes' and be mine forever?</p>
+        </div>
+    </div>
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            document.body.appendChild(heart);
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+            heart.style.left = `${x}px`;
+            heart.style.top = `${y}px`;
+            setTimeout(() => heart.remove(), 10000);
+        }
+        setInterval(createHeart, 300);
+
+        setTimeout(() => {
+            const letter = document.getElementById('letter');
+            letter.style.opacity = "0"; // Start hidden
+            letter.style.display = "block"; // Make it visible before fading in
+            setTimeout(() => {
+                letter.style.opacity = "1"; // Fade in smoothly
+            }, 100); // Small delay to trigger transition
+        }, 10000);        
+        
+    </script>
+</body>
+</html>
